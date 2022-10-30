@@ -24,7 +24,8 @@ public class LoginPage {
     }
 
     public WebElement authErrorMessageBox(){
-        WebElement authErrorMessageBoxElement = Hooks.driver.findElement(By.id("auth-error-message-box"))
+        WebElement authErrorMessageBoxElement = Hooks.driver.findElement(By.id("auth-error-message-box"));
+        return authErrorMessageBoxElement;
     }
 
     public void loginPage(){
@@ -45,7 +46,6 @@ public class LoginPage {
 
     public void loginSuccessfullyAssertion(){
         SoftAssert softAssert=new SoftAssert();
-//        String expectedURL = "https://www.amazon.de/ref=rhf_sign_in";
         String actualURL = Hooks.driver.getCurrentUrl();
         System.out.println(actualURL);
         softAssert.assertTrue(actualURL.contains("signin"));
@@ -54,11 +54,10 @@ public class LoginPage {
 
     public void loginUnsuccessfulAssertion(){
         SoftAssert softAssert=new SoftAssert();
-//        String expectedURL = "https://www.amazon.de/ref=rhf_sign_in";
         String actualURL = Hooks.driver.getCurrentUrl();
         System.out.println(actualURL);
         softAssert.assertTrue(actualURL.contains("signin"));
-        softAssert.assertTrue(Assert.Asser)
+        softAssert.assertTrue(authErrorMessageBox().isDisplayed());
         softAssert.assertAll();
     }
 }
