@@ -23,6 +23,10 @@ public class LoginPage {
         return signInBtn;
     }
 
+    public WebElement authErrorMessageBox(){
+        WebElement authErrorMessageBoxElement = Hooks.driver.findElement(By.id("auth-error-message-box"))
+    }
+
     public void loginPage(){
         Actions action = new Actions(Hooks.driver);
         action.click(register.hoverInAccountAndList()).build().perform();
@@ -45,6 +49,16 @@ public class LoginPage {
         String actualURL = Hooks.driver.getCurrentUrl();
         System.out.println(actualURL);
         softAssert.assertTrue(actualURL.contains("signin"));
+        softAssert.assertAll();
+    }
+
+    public void loginUnsuccessfulAssertion(){
+        SoftAssert softAssert=new SoftAssert();
+//        String expectedURL = "https://www.amazon.de/ref=rhf_sign_in";
+        String actualURL = Hooks.driver.getCurrentUrl();
+        System.out.println(actualURL);
+        softAssert.assertTrue(actualURL.contains("signin"));
+        softAssert.assertTrue(Assert.Asser)
         softAssert.assertAll();
     }
 }

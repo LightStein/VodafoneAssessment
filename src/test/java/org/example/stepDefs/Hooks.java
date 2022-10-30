@@ -15,7 +15,7 @@ public  class Hooks {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.navigate().to("https://www.amazon.de/");
+        driver.navigate().to("https://www.amazon.com/");
     }
     @After
     public static void quetDriver() throws InterruptedException {

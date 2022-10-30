@@ -15,21 +15,25 @@ public class S02_LoginStep {
     LoginPage login = new LoginPage();
     RegisterPage register=new RegisterPage();
 
-    @Given("user go to login page")
+    @Given("user goes to login page")
     public void userGoToLoginPage() {
         login.loginPage();
     }
 
-    @When("user login with valid email {string} and password {string}")
+    @When("user enters email {string} and password {string}")
     public void userLoginWithValidEmailAndPassword(String email , String password) {
         login.enterEmail(email);
         register.clickContinue();
         login.enterPassword(password);
         login.clickSignInBtn();
     }
-
-    @Then("user login to the system successfully")
+    @When("user enters email {string}")
+    public void userEnterEmail(String email , String password) {
+        login.enterEmail(email);
+        register.clickContinue();
+    }
+    @Then("user is prompted with invalid login error message")
     public void userLoginToTheSystemSuccessfully() {
-        login.loginSuccessfullyAssertion();
+        login.loginUnsuccessfulAssertion();
     }
 }

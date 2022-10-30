@@ -1,6 +1,6 @@
 
 Feature: F02_Login | users could use login functionality to use their accounts
-  Scenario: user could login with valid email and password
-    Given user go to login page
-    When user login with valid email "Customer Valid Email" and password "Customer Valid Password"
-    Then user login to the system successfully
+  Scenario: user can't login with invalid email and password
+    Given user goes to login page
+    When user enters email "Invalid Email"
+    Then user is prompted with invalid login error message
