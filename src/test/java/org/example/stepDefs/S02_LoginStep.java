@@ -1,14 +1,10 @@
 package org.example.stepDefs;
 
-import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.example.pages.LoginPage;
 import org.example.pages.RegisterPage;
-import org.openqa.selenium.By;
-
-import java.util.List;
 
 public class S02_LoginStep {
 
@@ -17,7 +13,7 @@ public class S02_LoginStep {
 
     @Given("user goes to login page")
     public void userGoToLoginPage() {
-        login.loginPage();
+        login.goToLoginPage();
     }
 
     @When("user enters email {string} and password {string}")

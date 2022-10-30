@@ -28,7 +28,7 @@ public class LoginPage {
         return authErrorMessageBoxElement;
     }
 
-    public void loginPage(){
+    public void goToLoginPage(){
         Actions action = new Actions(Hooks.driver);
         action.click(register.hoverInAccountAndList()).build().perform();
     }
