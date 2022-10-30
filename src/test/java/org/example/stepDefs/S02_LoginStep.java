@@ -28,7 +28,7 @@ public class S02_LoginStep {
         login.clickSignInBtn();
     }
     @When("user enters email {string}")
-    public void userEnterEmail(String email , String password) {
+    public void userEnterEmail(String email) {
         login.enterEmail(email);
         register.clickContinue();
     }
